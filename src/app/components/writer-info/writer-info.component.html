@@ -1,1 +1,13 @@
-<p>writer-info works!</p>
+<div class="containerInfo">
+  <div class="containerInfo__card" routerLink="/writers">
+    <div class="containerInfo__card-name">
+      <h2>{{ writer?.nombre }}, {{ writer?.apellidos }}</h2>
+    </div>
+    <div class="containerInfo__card-picture">
+      <img src="{{ writer?.imagen }}" alt="Escritor {{ writer?.nombre }}" />
+    </div>
+    <div class="containerInfo__card-country">
+      <p>{{ writer?.pais }}</p>
+    </div>
+  </div>
+</div>

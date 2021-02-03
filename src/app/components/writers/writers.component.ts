@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Writer } from 'src/app/models/writer.model';
+import { WriterService } from '../../services/writer.service';
 
 @Component({
   selector: 'app-writers',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WritersComponent implements OnInit {
 
-  constructor() { }
+  writers: Writer[];
 
-  ngOnInit(): void {
+  constructor(private writerService: WriterService) {
+    this.writers = [];
   }
 
+  async ngOnInit() {
+    this.writers = await this.writerService.getAll();
+  }
+
+  async onChange($event: any) {
+    let country = $event.target.value;
+    if (country === "todos") this.writers = await this.writerService.getAll()
+    else this.writers = await this.writerService.getByCountry(country);
+  }
 }

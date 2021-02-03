@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Writer } from 'src/app/models/writer.model';
+import { WriterService } from 'src/app/services/writer.service';
 
 @Component({
   selector: 'app-writer-info',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WriterInfoComponent implements OnInit {
 
-  constructor() { }
+  writer?: Writer;
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute, private writerService: WriterService) {
+
   }
 
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(async params => {
+      try {
+        this.writer = await this.writerService.getWriterById(parseInt(params.id))
+      } catch (e: any) { console.log(e); };
+    });
+  }
 }
