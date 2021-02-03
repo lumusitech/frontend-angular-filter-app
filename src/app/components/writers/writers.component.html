@@ -10,7 +10,7 @@
   <div
     *ngFor="let writer of writers"
     class="containerWriters__card"
-    [routerLink]="['/writer', writer.id]"
+    [routerLink]="['/writers', writer.id]"
   >
     <div class="containerWriters__card-name">
       <h2>{{ writer.nombre }}</h2>

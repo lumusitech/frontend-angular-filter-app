@@ -10,4 +10,14 @@
       <p>{{ writer?.pais }}</p>
     </div>
   </div>
+  <div class="containerInfo__books">
+    <router-outlet></router-outlet>
+  </div>
+  <button
+    type="button"
+    class="containerInfo__button"
+    routerLink="/writers/{{ writer?.id }}/books"
+  >
+    Ver Libros
+  </button>
 </div>

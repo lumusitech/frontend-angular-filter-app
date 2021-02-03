@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { WritersComponent } from './components/writers/writers.component';
 import { WriterInfoComponent } from './components/writer-info/writer-info.component';
 import { FormsModule } from '@angular/forms';
+import { BooksComponent } from './components/books/books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WritersComponent,
-    WriterInfoComponent
+    WriterInfoComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,

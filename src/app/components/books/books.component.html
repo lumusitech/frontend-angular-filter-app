@@ -1,0 +1,9 @@
+<div class="containerBook" *ngFor="let book of books">
+  <div class="containerBook__image">
+    <img src="{{ book?.imagen }}" alt="Imagen del libro {{ book?.titulo }}" />
+  </div>
+  <div class="containerBook__title">
+    <h4>{{ book?.titulo }}</h4>
+    <p>publicado en {{ book?.publicado }}</p>
+  </div>
+</div>

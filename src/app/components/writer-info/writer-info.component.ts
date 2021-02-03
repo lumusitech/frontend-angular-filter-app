@@ -13,7 +13,6 @@ export class WriterInfoComponent implements OnInit {
   writer?: Writer;
 
   constructor(private activatedRoute: ActivatedRoute, private writerService: WriterService) {
-
   }
 
   ngOnInit() {
